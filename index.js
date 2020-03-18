@@ -12,5 +12,30 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map(string => capitalizeString(string))
 }
+
+// const titleCased = () => {
+//   return tutorials.map(string =>{
+//     wordArr = string.split(" ")
+//     return wordArr.map(word => capitalizeWord(word)).join(" ")
+//   })
+//   // return tutorials
+// }
+
+const capitalizeString = (string) => {
+  return string.split(" ").map(word => capitalizeWord(word)).join(" ")
+}
+
+const capitalizeWord = (word) => {
+  if (typeof word !== 'string') {
+    return word
+  } else if (typeof word === 'string') {
+    return word.charAt(0).toUpperCase() + word.slice(1)
+  }
+}
+
+
+
+
+
